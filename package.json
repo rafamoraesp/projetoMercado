@@ -1,0 +1,16 @@
+{
+  "name": "projetomercado",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Rafael M Patrocinio",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.1.2"
+  },
+  "devDependencies": {},
+  "description": ""
+}
