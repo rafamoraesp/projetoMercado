@@ -44,11 +44,23 @@ test("multiplicar 3 * 7", () => {
 
     expect(resultadoAtual).toBe(resultadoEsperado);
 })
-
+// HP ALM Data Driven Test
 let massaDivisao = [
     [10, 5, 2],
-    [15, 3, 5]
+    [15, 3, 5],
+    [8, 4, 2]
 ];
+
+test.each(massaDivisao)("Dividir %f / %f", (num1, num2, resultadoEsperado) => {
+    // Configura
+    // Dados de entrada e resultado esperado são providos pela lista massaDivisao
+  
+    // Executa
+    const dividirDoisNumeros = calculadora.dividirDoisNumeros;
+    const resultadoAtual = dividirDoisNumeros(num1, num2);
+
+    expect(resultadoAtual).toBe(resultadoEsperado);
+})
 
 test("Dividir 27 / 9", () => {
     const num1 = 27;
