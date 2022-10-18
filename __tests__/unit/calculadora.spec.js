@@ -45,6 +45,11 @@ test("multiplicar 3 * 7", () => {
     expect(resultadoAtual).toBe(resultadoEsperado);
 })
 
+let massaDivisao = [
+    [10, 5, 2],
+    [15, 3, 5]
+];
+
 test("Dividir 27 / 9", () => {
     const num1 = 27;
     const num2 = 9;
