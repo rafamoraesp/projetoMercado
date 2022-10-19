@@ -2,6 +2,9 @@
 // Apontamento para o arquivo de desenvolvimento que vamos testar
 const calculadora = require("../../src/calculadora.js");
 
+// Apontamento para o arquivo de massa de teste
+const arquivoCsv = require("../../vendors/csv/massaDivisao.csv");
+
 //Funções de testes de unidade
 test("somar 5 + 7", () => {
     // 1 - Configura / Arrange
@@ -48,7 +51,8 @@ test("multiplicar 3 * 7", () => {
 let massaDivisao = [
     [10, 5, 2],
     [15, 3, 5],
-    [8, 4, 2]
+    [8, 4, 2],
+    [7, 0, Infinity]
 ];
 
 test.each(massaDivisao)("Dividir %f / %f", (num1, num2, resultadoEsperado) => {
@@ -70,5 +74,21 @@ test("Dividir 27 / 9", () => {
     const dividirDoisNumeros = calculadora.dividirDoisNumeros;
     const resultadoAtual = dividirDoisNumeros(num1, num2);
 
+    expect(resultadoAtual).toBe(resultadoEsperado);
+})
+
+test.each(arquivoCsv.array.map(elemento => [
+    elemento.num1,
+    elemento.num2,
+    elemento.resultadoEsperado
+]))
+("DDT: Dividir %f / %f", (num1, num2, resultadoEsperado) => {
+    // Configura
+    
+    // Executa
+    const dividirDoisNumeros = calculadora.dividirDoisNumeros;
+    const resultadoAtual = dividirDoisNumeros(num1, num2);
+
+    // Valida
     expect(resultadoAtual).toBe(resultadoEsperado);
 })
