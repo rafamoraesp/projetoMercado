@@ -82,6 +82,7 @@ test.each(arquivoCsv.array.map(elemento => [
     elemento.num2,
     elemento.resultadoEsperado
 ]))
+
 ("DDT: Dividir %f / %f", (num1, num2, resultadoEsperado) => {
     // Configura
     
