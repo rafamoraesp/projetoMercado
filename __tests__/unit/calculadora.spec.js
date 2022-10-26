@@ -84,7 +84,7 @@ test.each(arquivoJson.array.map(elemento => [
 ]))
 
 ("DDT: Dividir %f / %f", (num1, num2, resultadoEsperado) => {
-    // Configura
+    // Configura DDT = Data Driven Test 
     
     // Executa
     const dividirDoisNumeros = calculadora.dividirDoisNumeros;

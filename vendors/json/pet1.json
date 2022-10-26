@@ -1,0 +1,19 @@
+{
+    "id": 17321813,
+    "category": {
+      "id": 2,
+      "name": "Cat"
+    },
+    "name": "Ice",
+    "photoUrls": [
+      ""
+    ],
+    "tags": [
+      {
+        "id": 0,
+        "name": "vaccinated"
+      }
+    ],
+    "status": "available"
+  }
+  
