@@ -26,6 +26,7 @@ describe('PetStore Swagger - User', () => {
                 assert.equal(frase, "logged in user session:")
 
                 token = mensagem.substring(mensagem.indexOf(":") + 1)
+                console.log("O token eh " + token)
             })
 
     })
