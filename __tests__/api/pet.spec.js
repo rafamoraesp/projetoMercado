@@ -7,9 +7,11 @@ const assert = require("chai").assert;    // Função de assertiva do resultado,
 const baseUrl = "https://petstore.swagger.io/v2";  // url base da API
 const petId   = 17321813;                          // codigo do animal
 
+
 // Descrição = Conjunto de Testes ~ Classe
 describe("PetStore Swagger - Pet", () => {
     const request = supertest(baseUrl)
+    const pets = require("../../vendors/json/petn")
 
     // Post - teste de incluir um animal
     it("Post Pet", () => {
@@ -66,5 +68,24 @@ describe("PetStore Swagger - Pet", () => {
             });
                 
     });
+            // Função de carga de animais - Setup
+    pets.array.forEach(({nomePet, idPet, nomeCategoria, idCategoria}) => {
+        it('Setup Swagger - Add Pets', () => {
+            pet.id = idPet
+            pet.name = nomePet
+            pet.category.id = idCategoria
+            pet.category.name = nomeCategoria
+            pet.tags[0].id = 3
+            pet.tags[0].name = "vaccinated"
+            pet.status = "done"
+
+            return request
+            .post('/pet')
+            .send(pet)
+
+        
+        })
+    })
+    
 
 });
