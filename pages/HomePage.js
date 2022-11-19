@@ -1,4 +1,5 @@
 const BasePage = require('./BasePage')
+const By = require('selenium-webdriver').By
 
 
 class HomePage extends BasePage{
@@ -13,10 +14,10 @@ class HomePage extends BasePage{
 
     async selecionarOrigemDestinoVoo(origem, destino){
         let dropDownOrigem = await this.driver.findElement(this.byDropDownOrigem)
-        await dropDownOrigem.findElement(By.css('[value="${origem.}]')).click()
+        await dropDownOrigem.findElement(By.css(`[value="${origem}"]`)).click()
 
         let dropDownDestino = await this.driver.findElement(this.byDropDownDestino)
-        await dropDownDestino.findElement(By.css('[value="${Destino.}]')).click()
+        await dropDownDestino.findElement(By.css(`[value="${destino}"]`)).click()
 
         await this.driver.findElement(this.btnBuscar).click()
     }
